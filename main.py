@@ -1,14 +1,25 @@
-class Cleaner:
-    def __init__(self, name):
+
+class Person:
+    def __init__(self, name, salary, bonus):
         self.name = name
-        self.salary = 15000
-        self.bonus = 1
+        self.salary = salary
+        self.bonus = bonus
 
     def calculate_total_bonus(self):
         return self.salary // 100 * self.bonus
 
     def __str__(self):
-        return f'Cleaner {self.name}, salary {self.salary}, bonus {self.bonus} %, total bonus {self.calculate_total_bonus()} rub'
+        return (f'{self.__class__.__name__} {self.name}, salary {self.salary}, bonus {self.bonus} %,'
+                f' total bonus {self.calculate_total_bonus()} rub')
+
+
+
+class Cleaner(Person):
+    def __init__(self, name):
+        self.name = name
+        self.salary = 15000
+        self.bonus = 1
+
 
 
 class Manager:
