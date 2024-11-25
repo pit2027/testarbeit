@@ -9,8 +9,8 @@ class Person:
         return self.salary // 100 * self.bonus
 
     def __str__(self):
-        return (f'{self.__class__.__name__} {self.name}, salary {self.salary}, bonus {self.bonus} %,'
-                f' total bonus {self.calculate_total_bonus()} rub')
+        return (f'{self.__class__.__name__} {self.name}, salary = {self.salary}, bonus = {self.bonus} %,'
+                f' total bonus {self.calculate_total_bonus()} = rub')
 
 
 
@@ -30,6 +30,9 @@ class Manager(Person):
 class CEO(Person):
     def __init__(self, name):
         super().__init__(name, 105000, 100)
+
+    def calculate_total_bonus(self):
+        return 200000                  #pereopredelenie calculate_total_bonus
 
 
 
