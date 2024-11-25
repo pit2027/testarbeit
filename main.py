@@ -16,36 +16,23 @@ class Person:
 
 class Cleaner(Person):
     def __init__(self, name):
-        self.name = name
-        self.salary = 15000
-        self.bonus = 1
+        super().__init__(name, 1500, 1)
 
 
 
-class Manager:
+
+class Manager(Person):
     def __init__(self, name):
-        self.name = name
-        self.salary = 45000
-        self.bonus = 15
-
-    def calculate_total_bonus(self):
-        return self.salary // 100 * self.bonus
-
-    def __str__(self):
-        return f'Manager {self.name}, salary {self.salary}, bonus {self.bonus} %, total bonus {self.calculate_total_bonus()} rub'
+        super().__init__(name, 45000, 15)
 
 
-class CEO:
+
+class CEO(Person):
     def __init__(self, name):
-        self.name = name
-        self.salary = 105000
-        self.bonus = 100
+        super().__init__(name, 105000, 100)
 
-    def calculate_total_bonus(self):
-        return self.salary // 100 * self.bonus
 
-    def __str__(self):
-        return f'CEO {self.name}, salary {self.salary}, bonus {self.bonus} %, total bonus {self.calculate_total_bonus()} rub'
+
 
 
 if __name__ == '__main__':
